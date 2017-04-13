@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Xam.Plugin.Validators</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Jason Brown</authors>
+    <owners>Jason Brown</owners>
+    <licenseUrl>https://github.com/JasonBro/Xam.Plugin.Validators/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/JasonBro/Xam.Plugin.Validators</projectUrl>
+    <!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Xamarin.Forms PCL plugin to allow easy validation of entries</description>
+    <releaseNotes>Initial alpha version</releaseNotes>
+    <copyright>Copyright © Sparcliff Ltd 2017</copyright>
+    <tags>xamarin, validation, pcl, xam.pcl, plugin, plugin for xamarin, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+  </metadata>
+</package>

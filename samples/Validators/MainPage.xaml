@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:Xam.Plugin.Validators;assembly=Xam.Plugin.Validators"
+             x:Class="Validators.MainPage">
+			
+	<StackLayout>
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Name" />
+			<Entry Text="{Binding Name}" HorizontalOptions="FillAndExpand" v:Validation.Validator="{v:Validator Type=EntryRequired, IsValid={Binding IsNameValid, Mode=OneWayToSource}, ErrorLabel={Reference NameInvalid} }" />
+		</StackLayout>
+		<Label x:Name="NameInvalid" Text="Please enter a name" TextColor="Red" HorizontalOptions="Center" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Email" />
+			<Entry Text="{Binding Email}" HorizontalOptions="FillAndExpand" Placeholder="Email" v:Validation.Validator="{v:Validator Type=Regex, ValidationExpression={Binding EmailRegex}, IsValid={Binding IsEmailValid, Mode=OneWayToSource}, ErrorLabel={Reference InvalidEmail} }" />
+		</StackLayout>
+		<Label x:Name="InvalidEmail" Text="Please enter a valid email" TextColor="Red" />
+
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Password" />
+			<Entry x:Name="Password" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True" Placeholder="Password" v:Validation.Validator="{v:Validator Type=EntryRequired, IsValid={Binding IsPasswordValid, Mode=OneWayToSource}, ErrorLabel={Reference InvalidPassword} }" />
+		</StackLayout>
+		<Label x:Name="InvalidPassword" Text="Please enter a password" TextColor="Red" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Password" />
+			<Entry HorizontalOptions="FillAndExpand" IsPassword="True" Placeholder="Confirm Password" v:Validation.Validator="{v:Validator Type=CompareEntry, CompareValue={Binding Source={x:Reference Password}, Path=Text}, ErrorLabel={Reference PasswordsDontMatch} }" />
+		</StackLayout>
+
+		<Label x:Name="PasswordsDontMatch" Text="The two passwords do not match" TextColor="Red" />
+
+	</StackLayout>
+
+
+</ContentPage>

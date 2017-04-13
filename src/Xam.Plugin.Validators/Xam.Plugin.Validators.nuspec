@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>Jason Brown</authors>
+		<owners>JasonBrown</owners>
+		<licenseUrl>https://github.com/JasonBro/Xam.Plugin.Validators/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/JasonBro/Xam.Plugin.Validators</projectUrl>
+		<iconUrl>https://cloud.githubusercontent.com/assets/1178225/25010890/65238972-2063-11e7-83c9-0bc5bd96a15b.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes>Initial alpha version</releaseNotes>
+		<copyright>$copyright$</copyright>
+		<tags>xamarin, validation, pcl, xam.pcl, plugin, plugin for xamarin, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+	</metadata>
+	<files>
+		<!-- Add a readme -->
+		<file src="readme.txt" target="" />
+	</files>
+</package>
