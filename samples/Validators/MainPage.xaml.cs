@@ -13,27 +13,5 @@ namespace Validators
 		{
 			InitializeComponent();
 		}
-
-		protected override void OnBindingContextChanged()
-		{
-			var bindingContext = this.BindingContext;
-
-			WalkContent(this.Content);
-
-			base.OnBindingContextChanged();
-		}
-
-		void WalkContent(View view)
-		{
-			var viewContainer = view as IViewContainer<View>;
-
-			if (viewContainer != null)
-			{
-				foreach (var childView in viewContainer.Children)
-				{
-					WalkContent(childView);
-				}
-			}
-		}
 	}
 }

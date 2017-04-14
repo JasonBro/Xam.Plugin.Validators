@@ -24,7 +24,7 @@ namespace Xam.Plugin.Validators
 		/// </summary>
 		public static void Init()
 		{
-			// don;t do anything - this is just for the linker to load this assembly for use with reflection
+			// don't do anything - this is just for the linker to load this assembly for use with reflection
 		}
 
 		/// <summary>

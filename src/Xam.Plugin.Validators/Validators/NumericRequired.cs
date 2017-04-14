@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Xam.Plugin.Validators
 {
@@ -11,6 +13,7 @@ namespace Xam.Plugin.Validators
 	/// Class NumericRequired.
 	/// </summary>
 	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	[Preserve(AllMembers = true)]
 	public class NumericRequired : EntryValidatorBase
 	{
 		/// <summary>

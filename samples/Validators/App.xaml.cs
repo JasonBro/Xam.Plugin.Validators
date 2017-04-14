@@ -13,7 +13,7 @@ namespace Validators
 		{
 			InitializeComponent();
 
-			Validation.Init();
+//			Validation.Init();
 
 			MainPage = new MainPage { BindingContext = new MainPageViewModel () };
 		}

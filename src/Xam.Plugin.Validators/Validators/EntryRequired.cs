@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Xam.Plugin.Validators
 {
@@ -11,8 +13,19 @@ namespace Xam.Plugin.Validators
 	/// Class EntryRequired.
 	/// </summary>
 	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
-	public class EntryRequired : EntryValidatorBase
+	[Preserve(AllMembers = true)]
+	public class EntryRequired : EntryValidatorBase, IMarkupExtension
 	{
+		/// <summary>
+		/// Returns the object created from the markup extension.
+		/// </summary>
+		/// <param name="serviceProvider">The service provider.</param>
+		/// <returns>The validator</returns>
+		public override object ProvideValue(IServiceProvider serviceProvider)
+		{
+			return base.ProvideValue(serviceProvider);
+		}
+
 		/// <summary>
 		/// Validates the text.
 		/// </summary>

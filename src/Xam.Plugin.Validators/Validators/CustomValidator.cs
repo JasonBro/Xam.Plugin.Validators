@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace Xam.Plugin.Validators
 {
+	/// <summary>
+	/// Class CustomValidator.
+	/// </summary>
+	/// <seealso cref="Xam.Plugin.Validators.EntryValidatorBase" />
+	[Preserve(AllMembers = true)]
 	public class CustomValidator : EntryValidatorBase
 	{
 		/// <summary>

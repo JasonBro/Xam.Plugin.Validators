@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Xam.Plugin.Validators
 {
@@ -12,21 +14,22 @@ namespace Xam.Plugin.Validators
 	/// Class RegexValidator.
 	/// </summary>
 	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	[Preserve(AllMembers = true)]
 	public class RegexValidator : EntryValidatorBase
 	{
 		/// <summary>
 		/// The validation expression property
 		/// </summary>
-		public static readonly BindableProperty ValidationExpressionProperty = BindableProperty.Create("ValidationExpression", typeof(string), typeof(RegexValidator), default(string));
+		public static readonly BindableProperty RegexProperty = BindableProperty.Create("Regex", typeof(string), typeof(RegexValidator), default(string));
 
 		/// <summary>
-		/// Gets or sets the validation expression.
+		/// Gets or sets the validation regex.
 		/// </summary>
-		/// <value>The validation expression.</value>
-		public string ValidationExpression
+		/// <value>The regex.</value>
+		public string Regex
 		{
-			get { return (string)base.GetValue(ValidationExpressionProperty); }
-			set { base.SetValue(ValidationExpressionProperty, value); }
+			get { return (string)base.GetValue(RegexProperty); }
+			set { base.SetValue(RegexProperty, value); }
 		}
 
 		/// <summary>
@@ -37,9 +40,9 @@ namespace Xam.Plugin.Validators
 		protected override bool ValidateText(string text)
 		{
 			// get the current value
-			string validationExpression = ValidationExpression;
+			string validationExpression = Regex;
 
-			return String.IsNullOrEmpty(validationExpression) || (Regex.IsMatch(text, validationExpression, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
+			return String.IsNullOrEmpty(validationExpression) || (System.Text.RegularExpressions.Regex.IsMatch(text, validationExpression, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
 		}
 	}
 }

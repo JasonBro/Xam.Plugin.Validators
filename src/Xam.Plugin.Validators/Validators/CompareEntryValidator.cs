@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace Xam.Plugin.Validators
 {
@@ -11,6 +12,7 @@ namespace Xam.Plugin.Validators
 	/// Class CompareEntryValidator.
 	/// </summary>
 	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	[Preserve(AllMembers = true)]
 	public class CompareEntryValidator : EntryValidatorBase
 	{
 		/// <summary>

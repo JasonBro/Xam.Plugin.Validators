@@ -4,14 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Xam.Plugin.Validators
 {
 	/// <summary>
 	/// Class EntryValidatorBase.
 	/// </summary>
+	[Preserve(AllMembers = true)]
 	public abstract class EntryValidatorBase : ValidatorBase<Entry>
 	{
+		/// <summary>
+		/// Gets or sets the error label.
+		/// </summary>
+		/// <value>The error label.</value>
+		public Label ErrorLabel { get; set; }
+
+		/// <summary>
+		/// Returns the object created from the markup extension.
+		/// </summary>
+		/// <param name="serviceProvider">The service provider.</param>
+		/// <returns>The validator</returns>
+		public override object ProvideValue(IServiceProvider serviceProvider)
+		{
+			// set the label
+			if (ErrorLabel != null)
+			{
+				ErrorLabel.BindingContext = this;
+				ErrorLabel.SetBinding(Label.IsVisibleProperty, "DisplayErrorMessage");
+			}
+
+			return this;
+		}
+
+
 		/// <summary>
 		/// The update display
 		/// </summary>

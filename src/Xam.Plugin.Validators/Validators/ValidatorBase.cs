@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace Xam.Plugin.Validators
 {
@@ -12,7 +14,8 @@ namespace Xam.Plugin.Validators
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <seealso cref="Xamarin.Forms.Behavior{T}" />
-	public abstract class ValidatorBase<T> : Behavior<T> where T : BindableObject
+	[Preserve(AllMembers = true)]
+	public abstract class ValidatorBase<T> : Behavior<T>, IMarkupExtension where T : BindableObject
 	{
 		// add bindable properties
 		/// <summary>
@@ -98,5 +101,12 @@ namespace Xam.Plugin.Validators
 				BindingContext = bindable.BindingContext;
 			}
 		}
+
+		/// <summary>
+		/// Returns the object created from the markup extension.
+		/// </summary>
+		/// <param name="serviceProvider">To be added.</param>
+		/// <returns>The object</returns>
+		public abstract object ProvideValue(IServiceProvider serviceProvider);
 	}
 }

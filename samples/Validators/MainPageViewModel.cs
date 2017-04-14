@@ -37,6 +37,21 @@ namespace Validators
 		/// <value>The email regex.</value>
 		public string EmailRegex { get { return _emailRegex; } }
 
+
+		/// <summary>
+		/// Gets the custom validate function.
+		/// </summary>
+		/// <value>The custom validate.</value>
+		public Func<string, bool> CustomValidate
+		{
+			get
+			{
+				// Only valid it the text equals Hello
+				return (text) => text == "Hello";
+			}
+		}
+
+
 		/// <summary>
 		/// Gets or sets the test entry.
 		/// </summary>
