@@ -8,7 +8,7 @@ To use this package, declare the following in the following namespace in in your
 The add the validators to your entries as attached properties:-
 
 	<Entry Text="{Binding Name}" 
-			v:Validation.Validator="{v:Validator Type=EntryRequired, IsValid={Binding IsNameValid, Mode=OneWayToSource}, ErrorLabel={Reference NameInvalid} }"
+			v:Validation.Validator="{v:EntryRequired IsValid={Binding IsNameValid}, ErrorLabel={Reference NameInvalid} }"
 			/>
 
 and add an optional label to display the error message:-
@@ -19,7 +19,7 @@ Finally, the Xam.Plugin.Validators must be loaded at runtime. Either add the lin
 
 	[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
-to your AssemblyInfo.cs file to make Xamarin compile the xaml at build time (which in my opinion is by far the best appeoach),
+to your AssemblyInfo.cs file to make Xamarin compile the xaml at build time (which in my opinion is by far the best approach),
 or add:-
 
 	Validation.Init();
