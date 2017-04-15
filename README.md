@@ -5,7 +5,7 @@ To use this package, declare the following in the following namespace in in your
 
 	xmlns:v="clr-namespace:Xam.Plugin.Validators;assembly=Xam.Plugin.Validators"
 
-The add the validators to your entries as attached properties:-
+Then add the validators to your entries as attached properties:-
 
 	<Entry Text="{Binding Name}" 
 			v:Validation.Validator="{v:EntryRequired IsValid={Binding IsNameValid}, ErrorLabel={Reference NameInvalid} }"
