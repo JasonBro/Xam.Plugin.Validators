@@ -39,7 +39,7 @@ to the constructor of the app. e.g.
 
 		...
 
-I would really appreciate any feedback on how to make this plugin more useful. Just raise an issue on GutHub and I'll try and accommodate your request.
+I would really appreciate any feedback on how to make this plugin more useful. Just raise an issue on GitHub and I'll try and accommodate your request.
 
 Cheers
 
