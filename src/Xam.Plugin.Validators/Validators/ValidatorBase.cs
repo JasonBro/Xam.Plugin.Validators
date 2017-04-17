@@ -21,7 +21,7 @@ namespace Xam.Plugin.Validators
 		/// <summary>
 		/// The is valid property key
 		/// </summary>
-		static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(EntryRequired), false);
+		static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(ValidatorBase<T>), false);
 		/// <summary>
 		/// The is valid property
 		/// </summary>
@@ -30,11 +30,16 @@ namespace Xam.Plugin.Validators
 		/// <summary>
 		/// The display error message property key
 		/// </summary>
-		static readonly BindablePropertyKey DisplayErrorMessagePropertyKey = BindableProperty.CreateReadOnly("DisplayErrorMessage", typeof(bool), typeof(RegexValidator), false);
+		static readonly BindablePropertyKey DisplayErrorMessagePropertyKey = BindableProperty.CreateReadOnly("DisplayErrorMessage", typeof(bool), typeof(ValidatorBase<T>), false);
 		/// <summary>
 		/// The display error message property
 		/// </summary>
 		public static readonly BindableProperty DisplayErrorMessageProperty = DisplayErrorMessagePropertyKey.BindableProperty;
+
+		/// <summary>
+		/// The error style property
+		/// </summary>
+		public static readonly BindableProperty ErrorStyleProperty = BindableProperty.Create("ErrorStyle", typeof(Style), typeof(ValidatorBase<T>), default(Style));
 
 		/// <summary>
 		/// Gets the attached object.
@@ -60,6 +65,16 @@ namespace Xam.Plugin.Validators
 		{
 			get { return (bool)base.GetValue(DisplayErrorMessageProperty); }
 			protected set { base.SetValue(DisplayErrorMessagePropertyKey, value); }
+		}
+
+		/// <summary>
+		/// Gets or sets the error style.
+		/// </summary>
+		/// <value>The error style.</value>
+		public Style ErrorStyle
+		{
+			get { return (Style)base.GetValue(ErrorStyleProperty); }
+			set { base.SetValue(ErrorStyleProperty, value); }
 		}
 
 		// handle binding context changes

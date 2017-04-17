@@ -11,7 +11,7 @@
 		<iconUrl>https://cloud.githubusercontent.com/assets/1178225/25010890/65238972-2063-11e7-83c9-0bc5bd96a15b.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>$description$</description>
-		<releaseNotes>Improved validator creation</releaseNotes>
+		<releaseNotes>Added ErrorStyle and ErrorColor</releaseNotes>
 		<copyright>$copyright$</copyright>
 		<tags>xamarin, validation, pcl, xam.pcl, plugin, plugin for xamarin, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
 	</metadata>

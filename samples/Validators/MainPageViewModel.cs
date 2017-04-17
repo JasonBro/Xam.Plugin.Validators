@@ -19,12 +19,6 @@ namespace Validators
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		/// <summary>
-		/// The test entry
-		/// </summary>
-		string _testEntry;
-
-
-		/// <summary>
 		/// The email regex
 		/// </summary>
 		public const string _emailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
@@ -53,25 +47,7 @@ namespace Validators
 
 
 		/// <summary>
-		/// Gets or sets the test entry.
-		/// </summary>
-		/// <value>The test entry.</value>
-		public string TestEntry
-		{
-			get { return _testEntry; }
-			set
-			{
-				if (_testEntry != value)
-				{
-					_testEntry = value;
-					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TestEntry"));
-				}
-			}
-		}
-
-
-		/// <summary>
-		/// The is password valid
+		/// Is the password valid
 		/// </summary>
 		bool _isPasswordValid;
 
@@ -93,7 +69,7 @@ namespace Validators
 		}
 
 		/// <summary>
-		/// The is name valid
+		/// Is the name valid
 		/// </summary>
 		bool _isNameValid;
 
@@ -110,6 +86,28 @@ namespace Validators
 				{
 					_isNameValid = value;
 					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsNameValid"));
+				}
+			}
+		}
+
+		/// <summary>
+		/// Is the age valid
+		/// </summary>
+		bool _isAgeValid;
+
+		/// <summary>
+		/// Gets or sets a value indicating whether the age is valid.
+		/// </summary>
+		/// <value><c>true</c> if the age is valid; otherwise, <c>false</c>.</value>
+		public bool IsAgeValid
+		{
+			get { return _isAgeValid; }
+			set
+			{
+				if (_isAgeValid != value)
+				{
+					_isAgeValid = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsAgeValid"));
 				}
 			}
 		}
@@ -154,6 +152,72 @@ namespace Validators
 				{
 					_email = value;
 					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Email"));
+				}
+			}
+		}
+
+		/// <summary>
+		/// The Name
+		/// </summary>
+		public string _name;
+
+		/// <summary>
+		/// Gets or sets the Name.
+		/// </summary>
+		/// <value>The name.</value>
+		public string Name
+		{
+			get { return _name; }
+			set
+			{
+				if (_name != value)
+				{
+					_name = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Name"));
+				}
+			}
+		}
+
+		/// <summary>
+		/// The Age
+		/// </summary>
+		public string _age;
+
+		/// <summary>
+		/// Gets or sets the age.
+		/// </summary>
+		/// <value>The age.</value>
+		public string Age
+		{
+			get { return _age; }
+			set
+			{
+				if (_age != value)
+				{
+					_age = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Age"));
+				}
+			}
+		}
+
+		/// <summary>
+		/// The Password
+		/// </summary>
+		public string _password;
+
+		/// <summary>
+		/// Gets or sets the password.
+		/// </summary>
+		/// <value>The password.</value>
+		public string Password
+		{
+			get { return _password; }
+			set
+			{
+				if (_password != value)
+				{
+					_password = value;
+					PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Password"));
 				}
 			}
 		}
