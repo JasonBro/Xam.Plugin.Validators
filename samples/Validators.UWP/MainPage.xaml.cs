@@ -15,13 +15,13 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Validators.UWP
 {
-	public sealed partial class MainPage
-	{
-		public MainPage()
-		{
-			this.InitializeComponent();
+    public sealed partial class MainPage
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
 
-			LoadApplication(new Validators.App());
-		}
-	}
+            LoadApplication(new Validators.App());
+        }
+    }
 }

@@ -12,7 +12,7 @@ namespace Xam.Plugin.Validators
 	/// <summary>
 	/// Class NumericRequired.
 	/// </summary>
-	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	/// <seealso cref="Xam.Plugin.Validators.EntryValidatorBase" />
 	[Preserve(AllMembers = true)]
 	public class NumericRequired : EntryValidatorBase
 	{

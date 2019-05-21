@@ -11,7 +11,7 @@ namespace Xam.Plugin.Validators
 	/// <summary>
 	/// Class CompareEntryValidator.
 	/// </summary>
-	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	/// <seealso cref="Xam.Plugin.Validators.EntryValidatorBase" />
 	[Preserve(AllMembers = true)]
 	public class CompareEntryValidator : EntryValidatorBase
 	{

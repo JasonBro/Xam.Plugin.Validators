@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{E634A419-DAF5-4BF6-BA21-8289A82A8C91}</ProjectGuid>
+    <ProjectGuid>{36DF0605-F08E-4056-AABE-8DF29563689C}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Validators.UWP</RootNamespace>
     <AssemblyName>Validators.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -89,10 +89,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -105,41 +101,36 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Validators.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\Default.rd.xml" />
-    <Content Include="Assets\LockScreenLogo.scale-100.png" />
-    <Content Include="Assets\LockScreenLogo.scale-125.png" />
-    <Content Include="Assets\LockScreenLogo.scale-150.png" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\LockScreenLogo.scale-400.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-125.png" />
-    <Content Include="Assets\SplashScreen.scale-150.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="Assets\Square150x150Logo.scale-100.png" />
-    <Content Include="Assets\Square150x150Logo.scale-125.png" />
-    <Content Include="Assets\Square150x150Logo.scale-150.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
     <Content Include="Assets\Square44x44Logo.scale-100.png" />
-    <Content Include="Assets\Square44x44Logo.scale-125.png" />
-    <Content Include="Assets\Square44x44Logo.scale-150.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-400.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-16_altform-unplated.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-32_altform-unplated.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-48_altform-unplated.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-256_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -152,8 +143,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Validators\Validators.csproj">
-      <Project>{237e848e-d4aa-4218-a3d3-be6e3763e8b1}</Project>
+      <Project>{D0296A03-0B6F-460E-8DC2-C4D7D72E7E97}</Project>
       <Name>Validators</Name>
     </ProjectReference>
   </ItemGroup>
