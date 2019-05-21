@@ -13,7 +13,7 @@ namespace Xam.Plugin.Validators
 	/// <summary>
 	/// Class RegexValidator.
 	/// </summary>
-	/// <seealso cref="AtYourDoor.ClientApp.Validators.EntryValidatorBase" />
+	/// <seealso cref="Xam.Plugin.Validators.EntryValidatorBase" />
 	[Preserve(AllMembers = true)]
 	public class RegexValidator : EntryValidatorBase
 	{

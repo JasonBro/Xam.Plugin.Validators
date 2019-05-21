@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:v="clr-namespace:Xam.Plugin.Validators;assembly=Xam.Plugin.Validators"
+             x:Class="Validators.MainPage">
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="errorStyle" TargetType="Entry">
+				<Setter Property="FontSize" Value="Large" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="TextColor" Value="Green" />
+			</Style>
+			<Style x:Key="normalStyle" TargetType="Entry">
+				<Setter Property="TextColor" Value="Pink" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+			
+	<StackLayout>
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Name" />
+			<Entry Text="{Binding Name}" HorizontalOptions="FillAndExpand" v:Validation.Validator="{v:EntryRequired IsValid={Binding IsNameValid}, ErrorLabel={Reference NameInvalid} }" />
+		</StackLayout>
+		<Label x:Name="NameInvalid" Text="Please enter a name" TextColor="Red" HorizontalOptions="Center" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Age" />
+			<Entry Text="{Binding Age}" HorizontalOptions="FillAndExpand" v:Validation.Validator="{v:NumericRequired IsValid={Binding IsAgeValid}, ErrorLabel={Reference AgeInvalid} }" />
+		</StackLayout>
+		<Label x:Name="AgeInvalid" Text="Please enter a numeric age" TextColor="Red" HorizontalOptions="Center" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Email" />
+			<Entry Text="{Binding Email}" HorizontalOptions="FillAndExpand" Placeholder="Email" 
+				v:Validation.Validator="{v:RegexValidator Regex={Binding EmailRegex}, IsValid={Binding IsEmailValid}, ErrorLabel={Reference InvalidEmail} }" />
+		</StackLayout>
+		<Label x:Name="InvalidEmail" Text="Please enter a valid email" TextColor="Red" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Password" />
+			<Entry x:Name="Password" HorizontalOptions="FillAndExpand" Text="{Binding Password}" IsPassword="True" Placeholder="Password" v:Validation.Validator="{v:EntryRequired IsValid={Binding IsPasswordValid}, ErrorLabel={Reference InvalidPassword} }" />
+		</StackLayout>
+		<Label x:Name="InvalidPassword" Text="Please enter a password" TextColor="Red" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Password" />
+			<Entry HorizontalOptions="FillAndExpand" IsPassword="True" Placeholder="Confirm Password" v:Validation.Validator="{v:CompareEntryValidator CompareValue={Binding Source={x:Reference Password}, Path=Text}, ErrorLabel={Reference PasswordsDontMatch}, ErrorColor=Blue}" />
+		</StackLayout>
+		<Label x:Name="PasswordsDontMatch" Text="The two passwords do not match" TextColor="Blue" />
+
+		<StackLayout Orientation="Horizontal" Spacing="10">
+			<Label Text="Type Hello" />
+			<Entry HorizontalOptions="FillAndExpand" Placeholder="Type Hello" Style="{StaticResource normalStyle}" v:Validation.Validator="{v:CustomValidator ValidationFunction={Binding CustomValidate}, ErrorLabel={Reference HelloNotEntered}, ErrorStyle={StaticResource errorStyle} }" />
+		</StackLayout>
+		<Label x:Name="HelloNotEntered" Text="You haven't typed Hello" TextColor="Red" />
+	</StackLayout>
+
+
+</ContentPage>

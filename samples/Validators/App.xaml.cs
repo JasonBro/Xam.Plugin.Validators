@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Xam.Plugin.Validators;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Validators
 {

@@ -58,11 +58,10 @@ namespace Xam.Plugin.Validators
 		/// <returns>The validator</returns>
 		public override object ProvideValue(IServiceProvider serviceProvider)
 		{
-			// set the label
+			//// set the label
 			if (ErrorLabel != null)
 			{
-				ErrorLabel.BindingContext = this;
-				ErrorLabel.SetBinding(Label.IsVisibleProperty, "DisplayErrorMessage");
+				ErrorLabel.IsVisible = false;
 			}
 
 			return this;
@@ -157,6 +156,12 @@ namespace Xam.Plugin.Validators
 				// otherwise use the color
 				entry.TextColor = (!DisplayErrorMessage || IsValid) ? _previousColor : ErrorColor;
 			}
+
+			if (ErrorLabel != null)
+			{
+				ErrorLabel.IsVisible = DisplayErrorMessage;
+			}
+
 		}
 
 		/// <summary>
